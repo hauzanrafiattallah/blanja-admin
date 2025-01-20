@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import ModalProvider from "@/provider/modal-provider";
+import db from "@/lib/db";
+import { ClerkProvider } from "@clerk/nextjs";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,12 +17,16 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const store = db;
+
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        <ModalProvider />
-        {children}
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang="en">
+        <body className={inter.className}>
+          <ModalProvider />
+          {children}
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
