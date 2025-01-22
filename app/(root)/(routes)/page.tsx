@@ -15,12 +15,7 @@ const SetupPage = () => {
     }
   }, [isOpen, onOpen]);
 
-  return (
-    <div>
-      <UserButton afterSignOutUrl="/" />
-      <div className="p-4">Ini Sudah Login</div>
-    </div>
-  );
+  return null;
 };
 
 export default SetupPage;
