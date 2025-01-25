@@ -102,7 +102,7 @@ export const CategoryForm: React.FC<CategoryFormProps> = ({
       router.push(`/${params.storeId}/categories`);
       toast.success("Category berhasil dihapus");
     } catch (error) {
-      toast.error("Gagal menghapus store");
+      toast.error("Gagal menghapus category");
     } finally {
       setOpen(false);
       setLoading(false);
@@ -147,7 +147,7 @@ export const CategoryForm: React.FC<CategoryFormProps> = ({
                   <FormControl>
                     <Input
                       {...field}
-                      placeholder="Nam Category"
+                      placeholder="Nama Category"
                       disabled={loading}
                     />
                   </FormControl>

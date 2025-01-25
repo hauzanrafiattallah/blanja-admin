@@ -91,7 +91,7 @@ export const BannerForm: React.FC<BannerFormProps> = ({ initialData }) => {
       router.push(`/${params.storeId}/banners`);
       toast.success("Banner berhasil dihapus");
     } catch (error) {
-      toast.error("Gagal menghapus store");
+      toast.error("Gagal menghapus banner");
     } finally {
       setOpen(false);
       setLoading(false);
@@ -144,26 +144,26 @@ export const BannerForm: React.FC<BannerFormProps> = ({ initialData }) => {
                 </FormItem>
               )}
             />
-
-            <FormField
-              control={form.control}
-              name="imageUrl"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Image</FormLabel>
-                  <FormControl>
-                    <ImageUpload
-                      disabled={loading}
-                      onChange={(url) => field.onChange(url)}
-                      onRemove={() => field.onChange("")}
-                      value={field.value ? [field.value] : []}
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
           </div>
+
+          <FormField
+            control={form.control}
+            name="imageUrl"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Image</FormLabel>
+                <FormControl>
+                  <ImageUpload
+                    disabled={loading}
+                    onChange={(url) => field.onChange(url)}
+                    onRemove={() => field.onChange("")}
+                    value={field.value ? [field.value] : []}
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
 
           <Button type="submit" disabled={loading}>
             {action}
