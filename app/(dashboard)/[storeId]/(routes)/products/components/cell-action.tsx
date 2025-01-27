@@ -39,6 +39,7 @@ export const CellAction: React.FC<CellActionProps> = ({ data }) => {
       router.push(`/${params.storeId}/products`);
       toast.success("Product berhasil dihapus");
     } catch (error) {
+      console.error("Error :", error);
       toast.error("Gagal menghapus store");
     } finally {
       setOpen(false);

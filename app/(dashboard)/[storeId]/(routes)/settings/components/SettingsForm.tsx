@@ -54,6 +54,7 @@ export const SettingsForm: React.FC<SettingsFormProps> = ({ initialData }) => {
       router.refresh();
       toast.success("Store berhasil diupdate");
     } catch (error) {
+      console.error("Error :", error);
       toast.error("Gagal update store");
     } finally {
       setLoading(false);
@@ -68,6 +69,7 @@ export const SettingsForm: React.FC<SettingsFormProps> = ({ initialData }) => {
       router.push("/");
       toast.success("Store berhasil dihapus");
     } catch (error) {
+      console.error("Error :", error);
       toast.error("Gagal menghapus store");
     } finally {
       setOpen(false);

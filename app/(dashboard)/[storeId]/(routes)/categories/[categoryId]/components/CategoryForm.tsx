@@ -20,7 +20,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Separator } from "@/components/ui/separator";
-import { useOrigin } from "@/hooks/use-origin";
+// import { useOrigin } from "@/hooks/use-origin";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Banner, Category } from "@prisma/client";
 import axios from "axios";
@@ -49,7 +49,7 @@ export const CategoryForm: React.FC<CategoryFormProps> = ({
 }) => {
   const params = useParams();
   const router = useRouter();
-  const origin = useOrigin();
+  // const origin = useOrigin();
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
 
@@ -86,6 +86,7 @@ export const CategoryForm: React.FC<CategoryFormProps> = ({
       router.push(`/${params.storeId}/categories`);
       toast.success(toastMessage);
     } catch (error) {
+      console.error("Error :", error);
       toast.error(toastError);
     } finally {
       setLoading(false);
@@ -102,6 +103,7 @@ export const CategoryForm: React.FC<CategoryFormProps> = ({
       router.push(`/${params.storeId}/categories`);
       toast.success("Category berhasil dihapus");
     } catch (error) {
+      console.error("Error :", error);
       toast.error("Gagal menghapus category");
     } finally {
       setOpen(false);

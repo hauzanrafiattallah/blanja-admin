@@ -1,8 +1,8 @@
 "use client";
 
 import { AlertModal } from "@/components/modals/alert-modals";
-import { ApiAlert } from "@/components/ui/api-alert";
 import { Button } from "@/components/ui/button";
+// import { ApiAlert } from "@/components/ui/api-alert";
 import {
   Form,
   FormControl,
@@ -15,7 +15,7 @@ import { Heading } from "@/components/ui/Heading";
 import ImageUpload from "@/components/ui/image-upload";
 import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
-import { useOrigin } from "@/hooks/use-origin";
+// import { useOrigin } from "@/hooks/use-origin";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Banner } from "@prisma/client";
 import axios from "axios";
@@ -40,7 +40,7 @@ type BannerFormValues = z.infer<typeof formSchema>;
 export const BannerForm: React.FC<BannerFormProps> = ({ initialData }) => {
   const params = useParams();
   const router = useRouter();
-  const origin = useOrigin();
+  // const origin = useOrigin();
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
 
@@ -77,6 +77,7 @@ export const BannerForm: React.FC<BannerFormProps> = ({ initialData }) => {
       router.push(`/${params.storeId}/banners`);
       toast.success(toastMessage);
     } catch (error) {
+      console.error("Error :", error);
       toast.error(toastError);
     } finally {
       setLoading(false);
@@ -91,6 +92,7 @@ export const BannerForm: React.FC<BannerFormProps> = ({ initialData }) => {
       router.push(`/${params.storeId}/banners`);
       toast.success("Banner berhasil dihapus");
     } catch (error) {
+      console.error("Error :", error);
       toast.error("Gagal menghapus banner");
     } finally {
       setOpen(false);

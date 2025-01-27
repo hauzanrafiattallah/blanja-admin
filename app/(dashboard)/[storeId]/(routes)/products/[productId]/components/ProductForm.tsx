@@ -23,7 +23,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Separator } from "@/components/ui/separator";
-import { useOrigin } from "@/hooks/use-origin";
+// import { useOrigin } from "@/hooks/use-origin";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Category, Image, Product } from "@prisma/client";
 import axios from "axios";
@@ -60,7 +60,7 @@ export const ProductForm: React.FC<ProductFormProps> = ({
 }) => {
   const params = useParams();
   const router = useRouter();
-  const origin = useOrigin();
+  // const origin = useOrigin();
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
 
@@ -106,6 +106,7 @@ export const ProductForm: React.FC<ProductFormProps> = ({
       router.push(`/${params.storeId}/products`);
       toast.success(toastMessage);
     } catch (error) {
+      console.error("Error :", error);
       toast.error(toastError);
     } finally {
       setLoading(false);
@@ -120,6 +121,7 @@ export const ProductForm: React.FC<ProductFormProps> = ({
       router.push(`/${params.storeId}/products`);
       toast.success("Product berhasil dihapus");
     } catch (error) {
+      console.error("Error :", error);
       toast.error("Gagal menghapus product");
     } finally {
       setOpen(false);
