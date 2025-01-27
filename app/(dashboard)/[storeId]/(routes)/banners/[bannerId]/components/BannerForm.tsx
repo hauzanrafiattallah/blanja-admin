@@ -1,8 +1,7 @@
 "use client";
 
-import { AlertModal } from "@/components/modals/alert-modals";
+import { AlertModal } from "@/components/modals/AlertModals";
 import { Button } from "@/components/ui/button";
-// import { ApiAlert } from "@/components/ui/api-alert";
 import {
   Form,
   FormControl,
@@ -12,10 +11,9 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Heading } from "@/components/ui/Heading";
-import ImageUpload from "@/components/ui/image-upload";
+import ImageUpload from "@/components/ui/ImageUpload";
 import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
-// import { useOrigin } from "@/hooks/use-origin";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Banner } from "@prisma/client";
 import axios from "axios";
@@ -40,7 +38,6 @@ type BannerFormValues = z.infer<typeof formSchema>;
 export const BannerForm: React.FC<BannerFormProps> = ({ initialData }) => {
   const params = useParams();
   const router = useRouter();
-  // const origin = useOrigin();
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
 

@@ -1,6 +1,6 @@
 "use client";
 
-import { useStoreModal } from "@/hooks/use-store-modal";
+import { useStoreModal } from "@/hooks/UseStoreModal";
 import Modal from "../ui/modal";
 import * as z from "zod";
 import { useForm } from "react-hook-form";
@@ -39,7 +39,7 @@ export const StoreModal = () => {
       setLoading(true);
       const response = await axios.post("/api/stores", values);
       toast.success("Berhasil membuat store");
-      window.location.assign(`/${response.data.id}`); 
+      window.location.assign(`/${response.data.id}`);
     } catch (error) {
       console.error("Error :", error);
       toast.error("Gagal membuat store");

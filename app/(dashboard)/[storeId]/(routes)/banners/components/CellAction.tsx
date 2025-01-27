@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { CategoryColumn } from "./columns";
+import { BannerColumn } from "./columns";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -14,10 +14,10 @@ import { Copy, Edit, MoreHorizontal, Trash } from "lucide-react";
 import toast from "react-hot-toast";
 import { useParams, useRouter } from "next/navigation";
 import axios from "axios";
-import { AlertModal } from "@/components/modals/alert-modals";
+import { AlertModal } from "@/components/modals/AlertModals";
 
 interface CellActionProps {
-  data: CategoryColumn;
+  data: BannerColumn;
 }
 
 export const CellAction: React.FC<CellActionProps> = ({ data }) => {
@@ -34,10 +34,10 @@ export const CellAction: React.FC<CellActionProps> = ({ data }) => {
   const onDelete = async () => {
     try {
       setLoading(true);
-      await axios.delete(`/api/${params.storeId}/categories/${data.id}`);
+      await axios.delete(`/api/${params.storeId}/banners/${data.id}`);
       router.refresh();
-      router.push(`/${params.storeId}/categories`);
-      toast.success("Category berhasil dihapus");
+      router.push(`/${params.storeId}/banners`);
+      toast.success("Banner berhasil dihapus");
     } catch (error) {
       console.error("Error :", error);
       toast.error("Gagal menghapus store");
@@ -69,9 +69,7 @@ export const CellAction: React.FC<CellActionProps> = ({ data }) => {
             Copy Id
           </DropdownMenuItem>
           <DropdownMenuItem
-            onClick={() =>
-              router.push(`/${params.storeId}/categories/${data.id}`)
-            }
+            onClick={() => router.push(`/${params.storeId}/banners/${data.id}`)}
           >
             <Edit className="mr-2 h-4 w-4" />
             Edit

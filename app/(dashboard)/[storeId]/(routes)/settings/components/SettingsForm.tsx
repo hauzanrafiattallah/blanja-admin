@@ -1,7 +1,7 @@
 "use client";
 
-import { AlertModal } from "@/components/modals/alert-modals";
-import { ApiAlert } from "@/components/ui/api-alert";
+import { AlertModal } from "@/components/modals/AlertModals";
+import { ApiAlert } from "@/components/ui/ApiAlert";
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -14,7 +14,7 @@ import {
 import { Heading } from "@/components/ui/Heading";
 import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
-import { useOrigin } from "@/hooks/use-origin";
+import { useOrigin } from "@/hooks/UseOrigin";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Store } from "@prisma/client";
 import axios from "axios";

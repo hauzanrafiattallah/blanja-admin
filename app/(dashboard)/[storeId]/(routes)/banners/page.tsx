@@ -1,8 +1,9 @@
 import db from "@/lib/db";
-import { BannerClient } from "./components/client";
+
 import { BannerColumn } from "./components/columns";
 
 import { format } from "date-fns";
+import { BannerClient } from "./components/client";
 
 const BannersPage = async ({ params }: { params: { storeId: string } }) => {
   const banners = await db.banner.findMany({

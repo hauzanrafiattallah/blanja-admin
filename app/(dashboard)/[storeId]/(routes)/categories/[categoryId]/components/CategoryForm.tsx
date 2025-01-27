@@ -1,6 +1,6 @@
 "use client";
 
-import { AlertModal } from "@/components/modals/alert-modals";
+import { AlertModal } from "@/components/modals/AlertModals";
 import { Button } from "@/components/ui/button";
 import {
   Form,

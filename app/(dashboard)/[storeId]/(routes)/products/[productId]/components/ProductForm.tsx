@@ -1,6 +1,6 @@
 "use client";
 
-import { AlertModal } from "@/components/modals/alert-modals";
+import { AlertModal } from "@/components/modals/AlertModals";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import {
@@ -13,7 +13,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Heading } from "@/components/ui/Heading";
-import ImageUpload from "@/components/ui/image-upload";
+import ImageUpload from "@/components/ui/ImageUpload";
 import { Input } from "@/components/ui/input";
 import {
   Select,
